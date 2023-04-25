@@ -8,13 +8,11 @@ namespace SampleUGS.Authentication
     public class AuthenticationEventChannel : ScriptableObject
     {
         #region Events
-
         public event Func<Task> OnRequestSignInAnonymouslyAsync = null;
 
         #endregion
 
         #region Publishers
-
         public async Task RequestSignInAnonymouslyAsync()
         {
             if (OnRequestSignInAnonymouslyAsync != null)

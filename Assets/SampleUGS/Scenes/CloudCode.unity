@@ -470,11 +470,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5010b73d9d1f04d95b4d3c9dde9c2f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDevelopment: 1
-  authenticationEventChannel: {fileID: 11400000, guid: 72b34ee6bd3af4bdcbe0d59e1ba5b3f7,
+  _isDevelopment: 1
+  _authenticationEventChannel: {fileID: 11400000, guid: 72b34ee6bd3af4bdcbe0d59e1ba5b3f7,
     type: 2}
-  cloudCodeEventChannel: {fileID: 11400000, guid: 9d9086e47befe45909c343021df397fc,
+  _cloudCodeEventChannel: {fileID: 11400000, guid: 9d9086e47befe45909c343021df397fc,
     type: 2}
+--- !u!1001 &1572724497
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 50676718242099416, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_Name
+      value: RemoteConfigController
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 625237073447136717, guid: 54b70db0dcd20431396e11d90113b25d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54b70db0dcd20431396e11d90113b25d, type: 3}
 --- !u!1001 &6884512864909550016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,12 +616,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AuthenticationController
       objectReference: {fileID: 0}
-    - target: {fileID: 7290991179683931979, guid: ec4952d92c5c545b2bd118c84b9a1367,
-        type: 3}
-      propertyPath: eventChannel
-      value: 
-      objectReference: {fileID: 11400000, guid: 72b34ee6bd3af4bdcbe0d59e1ba5b3f7,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -617,12 +684,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1243800293585002916, guid: 58df3b2eb96f04ab994a7f7b567dafba,
-        type: 3}
-      propertyPath: eventChannel
-      value: 
-      objectReference: {fileID: 11400000, guid: 9d9086e47befe45909c343021df397fc,
-        type: 2}
     - target: {fileID: 4000696379667409126, guid: 58df3b2eb96f04ab994a7f7b567dafba,
         type: 3}
       propertyPath: m_Name

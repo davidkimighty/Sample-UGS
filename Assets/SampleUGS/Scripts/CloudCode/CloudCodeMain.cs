@@ -9,13 +9,12 @@ namespace SampleUGS.CloudCode
     public class CloudCodeMain : MonoBehaviour
     {
         #region Variable Field
-
-        private const string ProductionEnv = "production";
-        private const string DevelopmentEnv = "development";
+        private const string s_productionEnv = "production";
+        private const string s_developmentEnv = "development";
         
-        [SerializeField] private bool isDevelopment;
-        [SerializeField] private AuthenticationEventChannel authenticationEventChannel;
-        [SerializeField] private CloudCodeEventChannel cloudCodeEventChannel;
+        [SerializeField] private bool _isDevelopment;
+        [SerializeField] private AuthenticationEventChannel _authenticationEventChannel;
+        [SerializeField] private CloudCodeEventChannel _cloudCodeEventChannel;
 
         #endregion
 
@@ -24,11 +23,11 @@ namespace SampleUGS.CloudCode
             try
             {
                 InitializationOptions options = new InitializationOptions();
-                options.SetEnvironmentName(isDevelopment ? DevelopmentEnv : ProductionEnv);
+                options.SetEnvironmentName(_isDevelopment ? s_developmentEnv : s_productionEnv);
                 await UnityServices.InitializeAsync(options);
-                await authenticationEventChannel.RequestSignInAnonymouslyAsync();
+                await _authenticationEventChannel.RequestSignInAnonymouslyAsync();
                 
-                await cloudCodeEventChannel.RequestSayHelloAsync("World");
+                await _cloudCodeEventChannel.RequestSayHelloAsync("World");
             }
             catch (Exception e)
             {

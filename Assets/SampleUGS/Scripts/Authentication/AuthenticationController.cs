@@ -9,23 +9,21 @@ namespace SampleUGS.Authentication
     public class AuthenticationController : MonoBehaviour
     {
         #region Variable Field
-
-        [SerializeField] private AuthenticationEventChannel eventChannel;
+        [SerializeField] private AuthenticationEventChannel _eventChannel;
         
         #endregion
 
         private void OnEnable()
         {
-            eventChannel.OnRequestSignInAnonymouslyAsync += RequestSignInAnonymouslyAsync;
+            _eventChannel.OnRequestSignInAnonymouslyAsync += RequestSignInAnonymouslyAsync;
         }
 
         private void OnDisable()
         {
-            eventChannel.OnRequestSignInAnonymouslyAsync -= RequestSignInAnonymouslyAsync;
+            _eventChannel.OnRequestSignInAnonymouslyAsync -= RequestSignInAnonymouslyAsync;
         }
 
         #region Subscribers
-        
         private async Task RequestSignInAnonymouslyAsync()
         {
             try

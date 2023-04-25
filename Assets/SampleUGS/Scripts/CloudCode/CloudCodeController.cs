@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SharedLibrary;
 using Unity.Services.CloudCode;
 using UnityEngine;
 
@@ -9,33 +11,41 @@ namespace SampleUGS.CloudCode
     public class CloudCodeController : MonoBehaviour
     {
         #region Variable Field
+        private const string s_moduleName = "Sample_UGS_CloudCode";
 
-        private const string ModuleName = "Sample_UGS_CloudCode";
-
-        [SerializeField] private CloudCodeEventChannel eventChannel;
+        [SerializeField] private CloudCodeEventChannel _eventChannel;
 
         #endregion
 
         private void OnEnable()
         {
-            eventChannel.OnRequestSayHelloAsync += SayHello;
+            _eventChannel.OnRequestSayHelloAsync += SayHello;
         }
 
         private void OnDisable()
         {
-            eventChannel.OnRequestSayHelloAsync -= SayHello;
+            _eventChannel.OnRequestSayHelloAsync -= SayHello;
         }
 
         #region Subscribers
-
         private async Task SayHello(string name)
         {
-            string result = await CloudCodeService.Instance.CallModuleEndpointAsync(ModuleName, CloudCodeFunctions.SayHello.ToString(),
-                new Dictionary<string, object>
-                {
-                    {"name", name}
-                });
-            Debug.Log($"[ CloudCode ] {result}");
+            try
+            {
+                string result = await CloudCodeService.Instance.CallModuleEndpointAsync(s_moduleName, CloudCodeFunctions.SayHello.ToString(),
+                    new Dictionary<string, object>
+                    {
+                        {"name", name}
+                    });
+
+                Message message = JsonUtility.FromJson<Message>(result);
+                if (message != null)
+                    Debug.Log($"[ CloudCode ] {message.content}");
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         #endregion

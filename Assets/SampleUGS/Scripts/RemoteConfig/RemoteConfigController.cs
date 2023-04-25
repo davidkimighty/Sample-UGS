@@ -7,7 +7,6 @@ namespace SampleUGS.RemoteConfig
     public class RemoteConfigController : MonoBehaviour
     {
         #region Private Functions
-        
         private T GetDataFromJson<T>(string key) where T : new()
         {
             try
