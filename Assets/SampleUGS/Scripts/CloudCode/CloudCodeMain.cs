@@ -28,6 +28,8 @@ namespace SampleUGS.CloudCode
                 await _authenticationEventChannel.RequestSignInAnonymouslyAsync();
                 
                 await _cloudCodeEventChannel.RequestSayHelloAsync("World");
+
+                await _cloudCodeEventChannel.RequestSpinReelAsync(3);
             }
             catch (Exception e)
             {

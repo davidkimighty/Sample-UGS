@@ -9,6 +9,7 @@ namespace SampleUGS.CloudCode
     {
         #region Events
         public event Func<string, Task> OnRequestSayHelloAsync = null;
+        public event Func<int, Task> OnRequestSpinReelsAsync = null;
 
         #endregion
 
@@ -17,6 +18,12 @@ namespace SampleUGS.CloudCode
         {
             if (OnRequestSayHelloAsync != null)
                 await OnRequestSayHelloAsync.Invoke(name);
+        }
+
+        public async Task RequestSpinReelAsync(int numberOfReels)
+        {
+            if (OnRequestSpinReelsAsync != null)
+                await OnRequestSpinReelsAsync.Invoke(numberOfReels);
         }
     
         #endregion
